@@ -1,0 +1,12 @@
+---
+
+ansible_distribution: RedHat
+ansible_os_family: RedHat
+
+kube_master: 'kube-master'
+kube_master_port: '8080'
+
+kube_etcd_server: 'kube-master'
+kube_etcd_server_port: '2379'
+
+kubelet_port: '10250'

@@ -1,0 +1,19 @@
+---
+# Linux pre-requisites and dependencies
+
+- name: Install useful tools
+  yum: name={{item}} state=latest
+  with_items:
+    - ntp
+    - net-tools
+
+- name: Enable and ensure ntpd service is started
+  service: name={{item}} enabled=true state=started
+  with_items:
+    - ntpd
+
+- name: Stop and disable firewalld.
+  service:
+    name: firewalld
+    state: stopped
+    enabled: False

@@ -1,0 +1,65 @@
+---
+
+# Usage:
+# <nodename>:
+#  box: <boxname>
+#  server:
+#    hostname: <hostname>
+#    memory: 2048
+#    vcpu: 2
+#    ip: xx.xx.xx.xx
+#  provisioning:
+#    role: <node-role>
+#    environment: vagrant
+#
+#  Nodename: name of the node that will be recognized by vagrant up command
+#  boxname: name of the base box that will be used to provision the node. Default:'relativkreativ/centos-7-minimal'.
+#  memory: Memory can be modified for each box.
+#  vcpu: same as memory it can also be modified.
+#  role: This is the role of the node that ansible will use to provision.
+#
+
+
+k8s-master:
+  box: relativkreativ/centos-7-minimal
+  server:
+    hostname: kube-master
+    memory: 2048
+    vcpu: 1
+    ip: 192.168.1.20
+  provisioning:
+    role: controller
+    environment: development
+
+k8s-minion1:
+  box: relativkreativ/centos-7-minimal
+  server:
+    hostname: kube-minion1
+    memory: 2048
+    vcpu: 1
+    ip: 192.168.1.25
+  provisioning:
+    role: minion
+    environment: development
+
+k8s-minion2:
+  box: relativkreativ/centos-7-minimal
+  server:
+    hostname: kube-minion2
+    memory: 2048
+    vcpu: 1
+    ip: 192.168.1.26
+  provisioning:
+    role: minion
+    environment: development
+
+k8s-minion3:
+  box: relativkreativ/centos-7-minimal
+  server:
+    hostname: kube-minion3
+    memory: 2048
+    vcpu: 1
+    ip: 192.168.1.27
+  provisioning:
+    role: minion
+    environment: development

@@ -1,0 +1,8 @@
+# Ansible Managed
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.1.20 kube-master
+192.168.1.25 kube-minion1
+192.168.1.26 kube-minion2
+192.168.1.27 kube-minion3

@@ -1,0 +1,29 @@
+---
+
+- name: Add docker common release repository.
+  copy:
+    src: virt7-common-release.repo
+    dest: /etc/yum.repos.d/virt7-common-release.repo
+    mode: 0644
+
+- name: Install k8s and docker.
+  yum:
+    pkg={{item}}
+    state=installed
+  with_items:
+    - kubernetes
+    - docker
+
+- name: Configure k8s.
+  template:
+    src=config.j2
+    dest=/etc/kubernetes/config
+    owner=root
+    group=root
+    mode=0644
+
+- name: Add host file.
+  copy:
+    src: hosts
+    dest: /etc/hosts
+    mode: 0644

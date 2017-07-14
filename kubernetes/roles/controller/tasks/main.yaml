@@ -1,0 +1,38 @@
+---
+
+- name: Install etcd on controller.
+  yum: pkg={{item}} state=installed
+  with_items:
+    - etcd
+
+- name: openssl generate private key
+  command: openssl genrsa -out {{ private_key_path }} {{ key_size }} creates={{ private_key_path }}
+  tags: openssl
+
+- name: Configure etcd.
+  template: src=etcd.conf.j2 dest=/etc/etcd/etcd.conf owner=root group=root mode=0644
+
+- name: configure apiserver.
+  template: src=apiserver.j2 dest=/etc/kubernetes/apiserver owner=root group=root mode=0644
+
+- name: configure controller-manager.
+  template: src=controller-manager.j2 dest=/etc/kubernetes/controller-manager owner=root group=root mode=0644
+
+- name: Enable and ensure all k8s controller services are enabled and started in order.
+  service: name={{item}} enabled=true state=started
+  with_items:
+    - etcd
+    - kube-apiserver
+    - kube-controller-manager
+    - kube-scheduler
+
+- file:
+    path: /opt/development
+    state: directory
+    mode: 0755
+
+- name: Add Pod Yaml config file.
+  copy:
+    src: pod_nginx.yaml
+    dest: /opt/development/pod_nginx.yaml
+    mode: 0644

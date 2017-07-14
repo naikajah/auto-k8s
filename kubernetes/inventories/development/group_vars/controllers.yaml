@@ -1,0 +1,10 @@
+---
+
+kube_api_server: '0.0.0.0'
+kube_api_port: '8080'
+
+etcd_listen_client_urls: 'http://0.0.0.0:2379'
+etcd_advertise_client_urls: 'http://0.0.0.0:2379'
+
+private_key_path: '/etc/kubernetes/serviceaccount.key'
+key_size: 2048

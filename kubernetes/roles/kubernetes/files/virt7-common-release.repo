@@ -1,0 +1,5 @@
+[virt7-common-release]
+name=virt7-common-release
+baseurl=http://cbs.centos.org/repos/virt7-common-release/x86_64/os/
+gpgcheck=0
+enabled=1

@@ -1,0 +1,7 @@
+[controllers]
+k8s-master ansible_connection=local
+
+[minions]
+k8s-minion1 ansible_connection=local
+k8s-minion2 ansible_connection=local
+k8s-minion3 ansible_connection=local
