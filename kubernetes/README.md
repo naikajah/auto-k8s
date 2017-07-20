@@ -60,7 +60,7 @@ kubernetes
 
 ## Nodes
 
- - [nodes.yaml] (../nodes.yaml): The file contains the details of the vagrant virtual machines that can be provisioned via this project.
+ - [nodes.yaml] (nodes.yaml): The file contains the details of the vagrant virtual machines that can be provisioned via this project.
 
 The format of the file is shown below:
 
@@ -100,8 +100,8 @@ The groups are created to ensure same configuration across the similar set of no
 Playbooks can be considered as a group containing one or more roles.
 
 At present there are 2 playbooks in the project each containing various roles.
-- [controller](controller/playbook.yaml)
-- [minion](minion/playbook.yaml)
+- [controller](playbooks/controller/playbook.yaml)
+- [minion](playbooks/minion/playbook.yaml)
 
 ## Roles
 
