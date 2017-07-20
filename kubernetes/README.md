@@ -109,7 +109,7 @@ Roles define the configuration of the virtual machine being provisioned. A machi
 
 Following roles are present as of today:
 
-- [controller](roles/controllers): (Configuration specific to the k8s master/controller)
+- [controller](roles/controller): (Configuration specific to the k8s master/controller)
 - [minion](roles/minion): (Configuration specific to the k8s minion/node)
 - [kubernetes](roles/kubernetes): (Configuration that is common to master and minion)
 - [linux](roles/linux): (OS specific configuration)
