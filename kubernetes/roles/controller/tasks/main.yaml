@@ -36,3 +36,21 @@
     src: pod_nginx.yaml
     dest: /opt/development/pod_nginx.yaml
     mode: 0644
+
+- name: Add Deployment Yaml config file.
+  copy:
+    src: deployment_nginx.yaml
+    dest: /opt/development/deployment_nginx.yaml
+    mode: 0644
+
+- name: Add Deployment Yaml config file.
+  copy:
+    src: replicationcontrollers_nginx.yaml
+    dest: /opt/development/replicationcontrollers_nginx.yaml
+    mode: 0644
+
+- name: Add Service Yaml config file.
+  copy:
+    src: service_nginx.yaml
+    dest: /opt/development/service_nginx.yaml
+    mode: 0644
